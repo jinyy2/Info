@@ -24,6 +24,16 @@
 
 - 스프링이 관리하는 빈(Bean)을 주입 받는다.
 
+**@RequestParam**
+
+- 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션입니다.
+
+  
+
+### LOMBOK
+
+***
+
 **@Getter**
 
 - 선언된 모든 필드의 get 메소드를 생성해준다.
@@ -33,7 +43,51 @@
 - 선언된 모든 final 필드가 포함된 생성자를 생성해준다.
 - final이 없는 필드는 생성자에 포함되지 않는다.
 
-**@RequestParam**
+**@NoArgsConstructor**
 
-- 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션입니다.
+- 기본 생성자 자동 추가 
+
+**@Builder**
+
+- 해당 클래스의 빌더 패턴 클래스 생성
+- 생성자 상단에 선언시 생성자에 포함된 필드만 빌더에 포함
+
+
+
+### JPA 
+
+***
+
+**@Entity** 
+
+- 테이블과 링크될 클래스임을 나타낸다.
+
+**@Id**
+
+- 해당 테이블의 PK 필드를 나타낸다.
+
+**@GeneratedValue**
+
+- PK의 생성 규칙을 나타낸다.
+- 스프링 부트 2.0에서는 GenerationType.IDENTITY 옵션을 추가해야 audo_increment가 된다.
+
+**@Column**
+
+- 문자열의 경우 VARCHAR(255)가 기본
+
+**@MappedSuperclass**
+
+- JPA Entity 클래스들이 BaseTimeEntity를 상속할 경우 필드들(createdDate, modifiedDate)도 칼럼으로 인식하도록 한다.
+
+**@EntityListeners(AuditingEntityListener.class)**
+
+- BaseTimeEntity 클래스에 Auditing 기능을 포함한다.
+
+**@CreatedDate**
+
+- Entity가 생성되어 저장될 때 시간이 자동으로 저장된다.
+
+**@LastModifiedDate**
+
+- 조회한 Entity의 값을 변경할 때 시간이 자동 저장된다.
 
