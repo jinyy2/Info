@@ -133,3 +133,195 @@ Vue.filter('capitalize', function (value) {
   ```
 
   
+
+- [watch](https://vuejs.org/v2/api/?#watch)
+
+Vue 인스턴스의 특정 프로퍼티가 변경될 때 실행할 콜백 함수 설정
+
+**Event**
+
+[v-on](https://vuejs.org/v2/api/#v-on)
+
+
+
+Dom 이벤트를 청취하기 위해 v-on 디렉티브 사용
+
+$event 명시적으로 넘겨주기 위함
+
+v-on == @
+
+```javascript
+<!-- method handler -->
+<button v-on:click="doThis"></button>
+
+<!-- inline statement -->
+<button v-on:click="doThat('hello', $event)"></button>
+
+            methods: {
+                doThis: function (event) {
+                    alert('Hello ' + this.name + '!')
+                    console.dir(event.target)
+                },
+								doThat: function (msg,e) {
+                    alert('Hello ' + this.name + '!')
+                    console.dir(event.target)
+ 	                  console.dir(e.target)
+                }
+            }
+
+<!-- shorthand -->
+<button @click="doThis"></button>
+```
+
+
+
+- [ref](https://vuejs.org/v2/api/#ref)
+
+Vue 인스턴스 객체의 자식 컴포넌트 또는 DOM 엘리먼트 요소
+
+```javascript
+<div id="app">
+        <h2>엘리먼트 참조하기</h2>
+
+        <!-- 아이디 : <input type="text" v-model="id"> -->
+        아이디 : <input type="text" v-model="id" ref="id"> 
+        <button @click="check">아이디 중복 체크</button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                id: ''
+            },
+            methods: {
+                check() {
+                    if (this.id.length == 0) {
+                        alert("아이디를 입력하세요!!");
+                         this.$refs.id.focus();
+                         //console.dir(this.$refs.id)
+                        return;
+                    }
+                    alert("아이디 중복체크 성공");
+                }
+            }
+        });
+    </script>
+```
+
+
+
+- [v-bind](https://vuejs.org/v2/api/?#v-bind)
+
+엘리먼트의 클래스와 스타일을 변경
+
+v-bind:class는 조건에 따라서 클래스를 적용할 수 있음
+
+```html
+<div
+  class="static"
+  v-bind:class="{ active: isActive, 'text-danger': hasError }"
+></div>
+
+data: {
+  isActive: true,
+  hasError: false
+}
+```
+
+
+
+- [v-model](https://vuejs.org/v2/api/#v-model)
+
+v-model은 입력 요소에 대해서 특정 속성과 이벤트를 사용함
+
+- v-model은 입력 요소에 대해서 특정 속성과 이벤트를 사용함
+
+  ```html
+  <div id="app">
+          <div>
+              아이디 :
+              <input v-model="id" placeholder="아이디를 입력하세요">
+              <!-- change 이벤트에 반응 -->
+              <input v-model.lazy="id" placeholder="아이디를 입력하세요">
+          </div>
+          <div>
+              메세지 :
+              <textarea v-model="message" placeholder="메세지를 입력하세요"></textarea>
+          </div>
+          <p>{{ id }} 님에게 보내는 메세지 : {{ message }}</p>
+  
+      </div>
+      <script>
+          new Vue({
+              el: "#app",
+              data: {
+                  id: "",
+                  message: ""
+              }
+          })
+      </script>
+  ```
+
+  
+
+- checkbox, radio :checked,change 이벤트 사용
+
+  ```html
+  <div id="app">
+          <div>
+              숫자를 선택하세요
+          </div>
+          <input type="checkbox" id="1" value="1" v-model="checkedNumber">
+          <label for="1">1</label>
+          <input type="checkbox" id="2" value="2" v-model="checkedNumber">
+          <label for="2">2</label>
+          <input type="checkbox" id="3" value="3" v-model="checkedNumber">
+          <label for="3">3</label>
+          <input type="checkbox" id="4" value="4" v-model="checkedNumber">
+          <label for="4">4</label>
+          <br>
+          <span>체크한 숫자 : {{ checkedNumber }}</span>
+      </div>
+      <script>
+          new Vue({
+              el: "#app",
+              data: {
+                  checkedNumber: []
+              }
+          })
+      </script>
+  ```
+
+  
+
+- select : value,change 이벤트 사용
+
+  ```html
+  <div id="app">
+          <div>
+              <p>
+                  숫자를 선택하시오
+              </p>
+              <select v-model="selectedNumber">
+                  <option value="">선택하세요</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+              </select>
+          </div>
+          <span>선택한 숫자 : {{ selectedNumber }}</span>
+      </div>
+      <script>
+          new Vue({
+              el: "#app",
+              data: {
+                  selectedNumber: ""
+              }
+          })
+      </script>
+  ```
+
+
+
+- checkbox
