@@ -947,3 +947,11 @@ sudo kill -9 $CURRENT_PID
 fi
 ```
 
+#### sudo mvn spring-boot:run & error => permission denied error 뜨면 
+```
+$ cd /var/lib/jenkins/workspace/jenkins-test/backend
+$ sudo chmod 755 mvn
+
+또는 실행권한 +
+```
+
