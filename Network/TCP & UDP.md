@@ -28,29 +28,31 @@ PDU(Protocol Data Unit) : Segement
 
 ### TCP Header
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201109000845732.png" alt="image-20201109000845732" style="zoom:50%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201109000845732.png" alt="image-20201109000845732" style="zoom:50%;" />
 
 
 
-![image-20201109000229300](/Users/jinyy2/Library/Application Support/typora-user-images/image-20201109000229300.png)
+![image-20201109000229300](/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201109000229300.png)
 
 
 
 ### 3-way handshake (connection)
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201108201950493.png" alt="image-20201108201950493" style="zoom: 33%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201108201950493.png" alt="image-20201108201950493" style="zoom: 33%;" />
+
+
 
 
 
 ### 데이터 전송
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201108202011335.png" alt="image-20201108202011335" style="zoom: 33%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201108202011335.png" alt="image-20201108202011335" style="zoom: 33%;" />
 
 
 
 ### **4-way handshake (Connection close)**
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201108202031301.png" alt="image-20201108202031301" style="zoom: 33%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201108202031301.png" alt="image-20201108202031301" style="zoom: 33%;" />
 
 
 
@@ -72,12 +74,12 @@ TCP의 문제점
 
 ### UDP Header
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201109001225051.png" alt="image-20201109001225051" style="zoom:50%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201109001225051.png" alt="image-20201109001225051" style="zoom:50%;" />
 
-![image-20201109000116866](/Users/jinyy2/Library/Application Support/typora-user-images/image-20201109000116866.png)
+![image-20201109000116866](/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201109000116866.png)
 
 
 
 ### UDP의 데이터 전송 방식
 
-<img src="/Users/jinyy2/Library/Application Support/typora-user-images/image-20201108202305381.png" alt="image-20201108202305381" style="zoom: 33%;" />
+<img src="/Users/jinyy2/Info/Info/Network/TCP & UDP.assets/image-20201108202305381.png" alt="image-20201108202305381" style="zoom: 33%;" />
