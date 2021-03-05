@@ -34,6 +34,10 @@
 
 ***
 
+자바 개발할 때 자주 사용하는 코드 Getter, Setter, 기본생성자, toString 등을 어노테이션으로 자동 생성
+
+
+
 **@Getter**
 
 - 선언된 모든 필드의 get 메소드를 생성해준다.
@@ -61,6 +65,8 @@
 **@Entity** 
 
 - 테이블과 링크될 클래스임을 나타낸다.
+- SalesManager.java -> sales_manager table
+- Entity 클래스에서는 절대 Setter를 만들지 말것
 
 **@Id**
 
@@ -72,6 +78,8 @@
 - 스프링 부트 2.0에서는 GenerationType.IDENTITY 옵션을 추가해야 audo_increment가 된다.
 
 **@Column**
+
+- 변경사항이 필요할 때만 이용 ex) content, size 등
 
 - 문자열의 경우 VARCHAR(255)가 기본
 
@@ -91,3 +99,13 @@
 
 - 조회한 Entity의 값을 변경할 때 시간이 자동 저장된다.
 
+
+
+Repository.save
+
+- 테이블 insert/update 쿼리 실행
+- id 값이 있다면 update, 없다면 insert
+
+Repository.findAll()
+
+- 테이블에 있는 모든 데이터를 조회해오는 메소드
